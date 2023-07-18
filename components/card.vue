@@ -1,5 +1,5 @@
 <template>
-  <div class="w-96 rounded-xl shadow-xl p-4 border">
+  <div class="w-96 rounded-3xl shadow-xl p-4 border">
     <h1 class="text-xl font-semibold text-center">{{ deckName }}</h1>
     <div class="mt-6">
       <span class="text-lg font-semibold">New: </span><span class="text-green-500 font-semibold">{{ deck?.new }}</span>
