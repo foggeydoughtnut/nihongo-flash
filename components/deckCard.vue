@@ -13,7 +13,6 @@ import Deck from '../types/Deck';
 const props = defineProps({
   deck: Object as PropType<Deck>
 });
-console.log(props.deck)
 
 
 

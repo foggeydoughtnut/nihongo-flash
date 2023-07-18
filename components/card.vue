@@ -1,5 +1,5 @@
 <template>
-  <div class="w-96 rounded-3xl shadow-xl p-4 border">
+  <div class="md:w-96 w-full rounded-3xl shadow-xl p-4 border">
     <h1 class="text-xl font-semibold text-center">{{ deck?.name }}</h1>
     <div class="mt-6">
       <span class="text-lg font-semibold">New: </span><span class="text-green-500 font-semibold">{{ deck?.new }}</span>
@@ -27,7 +27,6 @@
   const props = defineProps({
     deck: Object as PropType<Deck>
   });
-  console.log(props.deck)
 
 
 

@@ -28,6 +28,10 @@ import Deck from '../types/Deck';
     inProgress: 0,
     review: 150,
   };
-  
+</script>
 
+<script lang="ts">
+  definePageMeta({
+    layout: 'navbar-layout',
+  })
 </script>

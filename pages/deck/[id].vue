@@ -16,9 +16,15 @@
 
 <script setup lang="ts">
 import Deck from '../../types/Deck';
-//@ts-ignore
 const { params } = useRoute();
-const deckId: number = params.id;
+let deckId: number = 0;
+if (typeof params.id === 'string') {
+  deckId = parseInt(params.id);
+} else {
+  console.error("Incorrect parameter")
+}
+
+// const deckId: number = params.id;
 
 // TODO: Get the deck information from the server
 const deck = {
@@ -29,11 +35,13 @@ const deck = {
   review: 150,
 } as Deck;
 
-
-
-
-
-
 </script>
+
+<script lang="ts">
+definePageMeta({
+  layout: 'navbar-layout',
+})
+</script>
+
 
 

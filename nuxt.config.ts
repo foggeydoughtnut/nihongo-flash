@@ -18,9 +18,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
-    // https://composition-api.nuxtjs.org
-    // '@nuxtjs/composition-api',
+    '@nuxtjs/stylelint-module',,
   ],
   modules: [
     '@nuxtjs/tailwindcss',
@@ -31,6 +29,9 @@ export default {
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      script: [{ src: 'https://kit.fontawesome.com/2392e370a0.js' }]
+    }
   },
   build: {
     transpile: [/@vue[\\/]composition-api/],
