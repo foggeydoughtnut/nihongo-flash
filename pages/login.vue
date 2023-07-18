@@ -22,7 +22,6 @@
           placeholder="Password" id="password" />
       </div>
 
-
       <NuxtLink to="/" class="
         text-center
         text-2xl

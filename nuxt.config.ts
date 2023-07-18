@@ -24,6 +24,7 @@ export default {
   ],
   modules: [
     '@nuxtjs/tailwindcss',
+    'nuxt-svgo',
   ],
   tailwindcss: {
     exposeConfig: true,
