@@ -90,6 +90,7 @@ import api from '../api';
       return
     } 
     loginFunc(res.data.token);
+    return navigateTo('/');
   };
 
 </script>
