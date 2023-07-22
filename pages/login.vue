@@ -58,6 +58,12 @@
 
 
     </div>
-
   </div>
 </template>
+
+<script setup lang="ts">
+  import api from '../api'
+  const res = await api('').user.getUser(1);
+  console.log(res)
+
+</script>
