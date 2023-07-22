@@ -40,6 +40,7 @@ const deck = {
 <script lang="ts">
 definePageMeta({
   layout: 'navbar-layout',
+  middleware: ['auth'],
 })
 </script>
 

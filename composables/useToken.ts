@@ -45,6 +45,7 @@ const useToken = () => {
     tokenEncoded.value = tokenStr;
     token.value = decodeToken(tokenStr);
   }
+
   const token = ref(getTokenFromLocal());
   const tokenEncoded = ref(getEncodedToken());
   const login = ref(loginFunc);

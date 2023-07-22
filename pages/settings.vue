@@ -15,5 +15,6 @@ import { NuxtLink } from '.nuxt/components';
 
   definePageMeta({
     layout: 'navbar-layout',
+    middleware: ['auth'],
   })
 </script>
