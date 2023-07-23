@@ -18,15 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import DeckInfo from 'types/DeckInfo';
 import api from '../api';
-import Deck from '../types/Deck';
-
-type DeckInfo = Deck & {
-  new: number,
-  review: number,
-  inProgress: number  
-};
-
 
 const decks = ref<DeckInfo[]>();
 const nextUpDeck = ref<DeckInfo>();
@@ -66,10 +59,6 @@ const getDecks = async () => {
 
   nextUpDeck.value = deckInfos[0] // Todo set this up on backend to get the next up deck
 }
-
-
-
-
 </script>
 
 <script lang="ts">

@@ -3,6 +3,7 @@ import LoginData from 'types/RequestDataTypes/LoginData';
 import UserCreationData from 'types/RequestDataTypes/UserCreationData';
 import DeckInfoRes from 'types/ResponseTypes/DeckInfoRes';
 import DeckRes from 'types/ResponseTypes/DeckRes';
+import DeckSpecificRes from 'types/ResponseTypes/DeckSpecificRes';
 import LoginRes from 'types/ResponseTypes/LoginRes';
 import UserCreationRes from 'types/ResponseTypes/UserCreationRes';
 import UserRes from 'types/ResponseTypes/UserRes';
@@ -53,7 +54,8 @@ const api = (authorization: string) => {
       login: (data: LoginData) => instance.post<LoginRes>('/user/login', { ...data }).then(responseBody),
     },
     deck: {
-      getDecks: (deckId?: number) => instance.get<DeckRes>("/deck", deckId ? {params: { id: deckId}} : {}).then(responseBody),
+      getDecks: () => instance.get<DeckRes>("/deck", {}).then(responseBody),
+      getDeckSpecific: (deckId?: number) => instance.get<DeckSpecificRes>("/deck", {params: { id: deckId}}).then(responseBody),
       getDeckInfo: (deckId: number) => instance.get<DeckInfoRes>("/deck/info", {params: {DeckId: deckId}}).then(responseBody),
     }
   }
