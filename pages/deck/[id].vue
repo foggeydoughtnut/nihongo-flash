@@ -24,6 +24,7 @@ if (typeof params.id === 'string') {
   deckId = parseInt(params.id);
 } else {
   console.error("Incorrect parameter")
+  navigateTo('/')
 }
 
 const deckInfo = ref<DeckInfo>();
@@ -42,6 +43,9 @@ const getDeckInfo = async () => {
   if (deckRes.error) {
     console.error(deckRes.error);
     return alert(deckRes.error);
+  }
+  if (!deckRes.data) {
+    navigateTo('/')
   }
 
   const deckInfoRes = await api(encodedToken).deck.getDeckInfo(deckId);
