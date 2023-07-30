@@ -1,6 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import LoginData from 'types/RequestDataTypes/LoginData';
 import UserCreationData from 'types/RequestDataTypes/UserCreationData';
+import AllCardsRes from 'types/ResponseTypes/AllCardsRes';
 import DeckInfoRes from 'types/ResponseTypes/DeckInfoRes';
 import DeckRes from 'types/ResponseTypes/DeckRes';
 import DeckSpecificRes from 'types/ResponseTypes/DeckSpecificRes';
@@ -57,6 +58,9 @@ const api = (authorization: string) => {
       getDecks: () => instance.get<DeckRes>("/deck", {}).then(responseBody),
       getDeckSpecific: (deckId?: number) => instance.get<DeckSpecificRes>("/deck", {params: { id: deckId}}).then(responseBody),
       getDeckInfo: (deckId: number) => instance.get<DeckInfoRes>("/deck/info", {params: {DeckId: deckId}}).then(responseBody),
+    },
+    card: {
+      getAllCards: (deckId: number) => instance.get<AllCardsRes>("/card", {params: {DeckId: deckId}}).then(responseBody),
     }
   }
 }

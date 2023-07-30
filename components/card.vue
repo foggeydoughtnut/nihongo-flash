@@ -11,7 +11,7 @@
       <span class="text-lg font-semibold">Review: </span><span class="text-blue-500 font-semibold">{{ deck?.review ?? 0}}</span>
     </div>
     <div class="text-end">
-      <NuxtLink :to="`/deck/${deck?.id}`" prefetch
+      <NuxtLink :to="`/study/${deck?.id}`" prefetch
         class="text-center text-xl p-2 px-6 rounded-xl mt-14 font-semibold shadow-md hover:shadow-lg delay-75 duration-300 transition-all bg-green-300 hover:bg-green-400"
       >
         Study
@@ -25,7 +25,7 @@
   import DeckInfo from 'types/DeckInfo';
 
   const props = defineProps({
-    deck: Object as PropType<DeckInfo>
+    deck: Object as PropType<DeckInfo>,
   });
 
 
